@@ -2,7 +2,7 @@ import { useRouter } from "expo-router";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { colors } from "./constants/colors";
+import { colors } from "../constants/colors";
 
 export default function Onboarding() {
   const insets = useSafeAreaInsets();
@@ -32,7 +32,7 @@ export default function Onboarding() {
 
         <Pressable
           style={styles.button}
-          onPress={() => console.log("Explorar vinhos")}
+          onPress={() => router.replace("../inicio")}
         >
           <Text style={styles.buttonText}>Explorar vinhos</Text>
         </Pressable>
@@ -41,7 +41,8 @@ export default function Onboarding() {
           Já tem uma conta?{" "}
           <Text
             style={styles.loginLink}
-            onPress={() => router.replace("../inicio")}
+            onPress={() => console.log("login")}
+      
           >
             Entrar
           </Text>
