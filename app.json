@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "WineApp",
-    "slug": "WineApp",
+    "name": "NonaVida",
+    "slug": "NonaVida",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "wineapp",
+    "scheme": "nonavida",
     "userInterfaceStyle": "automatic",
     "ios": {
       "icon": "./assets/expo.icon"
