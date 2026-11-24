@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1.5,
     color: colors.cream,
   },
-  logo: { width: 160, height: 160, marginTop: 70 },
+  logo: { width: 200, height: 400, marginTop: 70 },
   sheet: {
     backgroundColor: colors.cream,
     borderTopLeftRadius: 32,
