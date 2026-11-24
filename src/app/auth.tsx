@@ -120,7 +120,7 @@ export default function Auth() {
 
         <View style={styles.intro}>
           <Image
-            source={require("../../assets/images/logo.png")}
+            source={require("../../assets/images/logocat.png")}
             style={styles.logo}
             resizeMode="contain"
           />

@@ -41,7 +41,7 @@ export default function Onboarding() {
           Já tem uma conta?{" "}
           <Text
             style={styles.loginLink}
-            onPress={() => console.log("login")}
+            onPress={() => router.push("/auth")}
       
           >
             Entrar
