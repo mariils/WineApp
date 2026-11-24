@@ -1,10 +1,13 @@
+import { useRouter } from "expo-router";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { colors } from "../constants/colors";
+import { colors } from "./constants/colors";
 
 export default function Onboarding() {
   const insets = useSafeAreaInsets();
+  const router = useRouter();
+  
 
   return (
     <LinearGradient
@@ -38,7 +41,7 @@ export default function Onboarding() {
           Já tem uma conta?{" "}
           <Text
             style={styles.loginLink}
-            onPress={() => console.log("Entrar")}
+            onPress={() => router.replace("../inicio")}
           >
             Entrar
           </Text>
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 32,
     borderTopRightRadius: 32,
     paddingHorizontal: 24,
-    paddingTop: 14,
+    paddingTop: 25,
     alignItems: "center",
   },
   handle: {
