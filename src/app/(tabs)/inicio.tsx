@@ -127,7 +127,7 @@ export default function Inicio() {
 
         <Pressable
           style={styles.outlineButton}
-          onPress={() => console.log("Entrar / Cadastrar")}
+          onPress={() => router.push("../auth")}
         >
           <Text style={styles.outlineButtonText}>Entrar / Cadastrar</Text>
         </Pressable>

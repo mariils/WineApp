@@ -2,8 +2,12 @@ import { createContext, ReactNode, useContext, useState } from "react";
 import type { Wine } from "../types/wine";
 
 export type CartItem = { wine: Wine; quantity: number };
+export type User = { name: string; email: string };
 
 type AppContextData = {
+  user: User | null;
+  signIn: (user: User) => void;
+  signOut: () => void;
   favorites: string[];
   toggleFavorite: (id: string) => void;
   cart: CartItem[];
@@ -17,8 +21,17 @@ type AppContextData = {
 const AppContext = createContext<AppContextData | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
+  const [user, setUser] = useState<User | null>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [cart, setCart] = useState<CartItem[]>([]);
+
+  function signIn(newUser: User) {
+    setUser(newUser);
+  }
+
+  function signOut() {
+    setUser(null);
+  }
 
   function toggleFavorite(id: string) {
     setFavorites((current) =>
@@ -65,6 +78,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
   return (
     <AppContext.Provider
       value={{
+        user,
+        signIn,
+        signOut,
         favorites,
         toggleFavorite,
         cart,
