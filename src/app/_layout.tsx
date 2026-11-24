@@ -1,10 +1,12 @@
 import { Stack } from "expo-router";
 import {StatusBar} from "expo-status-bar";
+import { AppProvider } from "../context/AppContext";
 import {
   useFonts, PlayfairDisplay_700Bold, }
   from "@expo-google-fonts/playfair-display";
   import { Inter_400Regular, Inter_600SemiBold, Inter_700Bold,    
 } from "@expo-google-fonts/inter";
+
 
 export default function RootLayout() {
   const [loaded] = useFonts({
@@ -14,9 +16,9 @@ export default function RootLayout() {
   if (!loaded) return null;
 
   return (
-  <>
+  <AppProvider>
     <StatusBar style="light" />
-    <Stack screenOptions={{headerShown: false}} />
-  </>
-  );
+    <Stack screenOptions={{ headerShown: false }} />
+  </AppProvider>
+);
 }

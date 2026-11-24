@@ -1,8 +1,10 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../../constants/colors";
+import { useApp } from "../../context/AppContext";
 
 export default function TabsLayout() {
+const { cartCount } = useApp();
   return (
     <Tabs
       screenOptions={{
@@ -49,9 +51,10 @@ export default function TabsLayout() {
           title: "Carrinho",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="bag-outline" colors={color} size={size} />
-          ),
-        }}
-      />
+          ), tabBarBadge: cartCount > 0 ? cartCount : undefined,
+            tabBarBadgeStyle: { backgroundColor: colors.wine, color: "#FFFFFF" },
+            }}
+        />
       <Tabs.Screen
         name="perfil"
         options={{
