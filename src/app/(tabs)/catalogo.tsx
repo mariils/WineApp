@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import WineCard from "../../components/WineCard";
-import { wines } from "../../data/wine";
+import { wines } from "../../data/wines";
 import { useApp } from "../../context/AppContext";
 import { colors } from "../../constants/colors";
 

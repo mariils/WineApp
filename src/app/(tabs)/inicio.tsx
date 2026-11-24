@@ -106,7 +106,7 @@ export default function Inicio() {
 
         <Pressable
           style={[styles.card, styles.cardWine]}
-          onPress={() => console.log("Perfil de vinho")}
+          onPress={() => router.push("../perfil-vinho")}
         >
           <View style={[styles.cardIcon, styles.cardIconWine]}>
             <Ionicons name="options-outline" size={22} color="#FFFFFF" />
